@@ -1,0 +1,17 @@
+<div ng-repeat="product in vm.products">
+  <div class="col s5">
+
+    <div class="card horizontal">
+      <div class="card-image">
+        <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.21.1/img/item/{{product.image.full}}"/>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h5 class="header">{{product.name}}</h5>
+          <p>{{product.plaintext}}</p>
+          <p><img src="./assets/gold.png">{{product.gold.base}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

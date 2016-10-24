@@ -1,6 +1,29 @@
-<div ng-repeat="product in vm.products">
-  <div class="col s5">
+<!-- search and dropdown -->
+<div class="row">
+<!-- search bar -->
+  <form class="col s4">
+    <div class="input-field col s8">
+      <i class="material-icons prefix">search</i>
+      <input ng-model="search" id="search" type="search" required>
+      <label for="search">Search</label>
+    </div>
+  </form>
+<!-- search bar end -->
 
+<!-- dropdown start -->
+  <div input-field class="col s4">
+      <select class="" ng-model="select.value1" material-select watch>
+          <option value="" disabled selected>Sort By</option>
+          <option ng-repeat="product in vm.products.data" ng-if="product.tags[0]">{{product.tags[0]}}</option>
+      </select>
+  </div>
+<!-- dropdown end -->
+</div>
+<!-- end search and dropdown -->
+
+<!-- card content -->
+<div ng-repeat="product in vm.products.data" ng-if="product.gold.purchasable && product.maps[10] && product.maps[11] && !product.requiredChampion" ng-hide="product.hideFromAll">
+  <div class="col s5">
     <div class="card horizontal">
       <div class="card-image">
         <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.21.1/img/item/{{product.image.full}}"/>
@@ -15,3 +38,4 @@
     </div>
   </div>
 </div>
+<!-- end card content -->

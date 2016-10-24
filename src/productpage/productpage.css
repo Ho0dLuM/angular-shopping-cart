@@ -1,4 +1,6 @@
 .card {
   max-width: 20%;
+  height: 200px;
   overflow: hidden;
+  float: left;
 }

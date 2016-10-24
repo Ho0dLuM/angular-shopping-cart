@@ -6,14 +6,8 @@
   ProductController.$inject = ['ProductMachine'];
 
   function ProductController(ProductMachine) {
-    this.products = [];
-
-    ProductMachine.getAllProducts()
-    .then((data) => {
-      this.products = data.data.data;
-      console.log(this.products);
-    });
-
+    this.products = ProductMachine.products;
+    ProductMachine.getAllProducts();
   }
 
 })();

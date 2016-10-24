@@ -8,11 +8,14 @@
   ProductMachine.$inject = ['$http'];
 
   function ProductMachine($http) {
+    this.products = {};
 
     this.getAllProducts = () => {
-      return $http.get(productUrl);
+      return $http.get(productUrl)
+        .then((data) => {
+          this.products.data = data.data.data;
+        });
     };
-
   }
 
 })();
